@@ -1,5 +1,3 @@
 import sys
 
-input = list(sys.stdin.readline().split())
-
-print(len(input))
+print(len(sys.stdin.readline().split()))
