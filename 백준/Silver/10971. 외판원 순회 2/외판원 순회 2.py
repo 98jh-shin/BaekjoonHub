@@ -24,6 +24,9 @@ def dfs(depth, start, current_loc, current_cost):
 
         if cost[current_loc][i] == 0:
             continue
+        
+        if current_cost + cost[current_loc][i] >= min_cost:
+            continue
 
         visited[i] = True
         dfs(depth + 1, start, i, current_cost + cost[current_loc][i])
