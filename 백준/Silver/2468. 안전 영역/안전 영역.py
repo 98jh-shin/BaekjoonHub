@@ -1,46 +1,38 @@
 import sys
 from collections import deque
 
-n = int(input())
+input = sys.stdin.readline
 
+n = int(input())
 tiles = [list(map(int, sys.stdin.readline().split())) for _ in range(n)]
 
+max_height = max(map(max, tiles))
+min_height = min(map(min, tiles))
 
-max_height = 0
-for i in range(n):
-    for j in range(n):
-        if max_height < tiles[i][j]:
-            max_height = tiles[i][j]
+def bfs(sx, sy, h, visited):
+    q = deque([(sx, sy)])
+    visited[sx][sy] = True
+
+    while q:
+        x, y = q.popleft()
+        for nx, ny in zip((x+1, x-1, x, x), (y, y, y+1, y-1)):
+            if 0 <= nx < n and 0 <= ny < n:
+                if not visited[nx][ny] and tiles[nx][ny] > h:
+                    visited[nx][ny] = True
+                    q.append((nx, ny))
+
 result = 0
 
-dx = [0, 0, 1, -1]
-dy = [1, -1, 0, 0]
-
-def bfs(x,y, h, visited):
-    queue = deque()
-    queue.append((x,y))
-    visited[x][y] = True
-
-    while queue:
-        x, y = queue.popleft()
-
-        for i in range(4):
-             if 0 <= x + dx[i] < n and 0 <= y + dy[i] < n:
-                if not visited[x + dx[i]][y + dy[i]] and tiles[x + dx[i]][y + dy[i]] > h:
-                    visited[x+ dx[i]][y + dy[i]] = True
-                    queue.append((x+ dx[i], y + dy[i]))
-
-for h in range(0, max_height + 1):
+for h in range(min_height-1, max_height+1):
     visited = [[False] * n for _ in range(n)]
     count = 0
+    
     for i in range(n):
         for j in range(n):
             if tiles[i][j] > h and not visited[i][j]:
                 bfs(i, j, h, visited)
                 count += 1
-
-    if result < count:
-        result = count
+    
+    result = max(result, count)
 
 print(result)
-
