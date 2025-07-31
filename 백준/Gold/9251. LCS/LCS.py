@@ -1,17 +1,22 @@
-X = input()
-Y = input()
+import sys
 
-def LCS(X, Y):
-    n, m = len(X), len(Y)
-    memo = [[0] * (m + 1) for _ in range(n + 1)]
+a = sys.stdin.readline().strip()
+b = sys.stdin.readline().strip()
 
-    for i in range(n):
-        for j in range(m):
-            if X[i] == Y[j]:
-                memo[i+1][j+1] = memo[i][j] + 1
+
+def LCS(a, b):
+    len_a = len(a)
+    len_b = len(b)
+
+    dp = [[0] * (len_b + 1) for _ in range(len_a + 1)]
+
+    for i in range(1, len_a + 1):
+        for j in range(1, len_b + 1):
+            if a[i - 1] == b[j - 1]:
+                dp[i][j] = dp[i - 1][j - 1] + 1
             else:
-                memo[i+1][j+1] = max(memo[i][j+1], memo[i+1][j])
-    return memo[n][m]
+                dp[i][j] = max(dp[i - 1][j], dp[i][j - 1])
+    return dp[i][j]
 
-result = LCS(X, Y)
-print(result)
+
+print(LCS(a, b))
