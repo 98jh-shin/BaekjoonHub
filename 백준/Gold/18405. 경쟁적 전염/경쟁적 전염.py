@@ -1,41 +1,40 @@
 import sys
 from collections import deque
-import heapq
-n, m = map(int, sys.stdin.readline().split())
 
-graph = [list(map(int, sys.stdin.readline().split())) for _ in range(n)]
-hq = []
+input = sys.stdin.readline
+n, k = map(int, input().split())
+a=[list(map(int, input().split())) for _ in range(n)]
+s, x, y = map(int, input().split())
 
-s, x, y = map(int, sys.stdin.readline().split())
+dx=[0, 0, 1, -1]
+dy=[1, -1, 0, 0]
 
-for i in range(n):
-    for j in range(n):
-        if graph[i][j] != 0:
-            heapq.heappush(hq, (graph[i][j], i, j))
+start=[]
+def startcheck():
+    for i in range(n):
+        for j in range(n):
+            if a[i][j] != 0:
+                start.append((a[i][j],i,j,0))
 
-dx = [0, 0, 1, -1]
-dy = [1, -1, 0, 0]
-tmp = []
-sec = 0
 
-while hq:
-    if sec == s: ## 목표 시간이 되면
-        print(graph[x - 1][y - 1])
-        break
+def bfs():
+    deque_bfs = deque(start)
+    while deque_bfs:
+        d, e, f,t = deque_bfs.popleft()
+        if t == s:
+            return
+        for i in range(4):
+            ne = e+dx[i]
+            nf = f+dy[i]
+            if 0<=ne<n and 0<=nf<n:
+                if a[ne][nf] ==0:
+                    a[ne][nf]=d
+                    deque_bfs.append((a[ne][nf], ne, nf, t+1))
+startcheck()
+start.sort()
+bfs()
 
-    v, cur_x, cur_y = heapq.heappop(hq)
-
-    for i in range(4):
-        nx = cur_x + dx[i]
-        ny = cur_y + dy[i]
-        if 0 <= nx < n and 0 <= ny < n:
-            if graph[nx][ny] == 0:
-                graph[nx][ny] = v
-                heapq.heappush(tmp, (v, nx, ny))
-
-    if not hq and tmp: # 정렬이 풀리고 있어서 틀림
-        while tmp:
-            heapq.heappush(hq, heapq.heappop(tmp))
-        sec += 1
+if len(start) == 0:
+    print(0)
 else:
-    print(graph[x - 1][y - 1])
+    print(a[x-1][y-1])
