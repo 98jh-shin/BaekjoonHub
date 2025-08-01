@@ -38,7 +38,6 @@ for i in range(len(w_list) - 1):
     if w_max < w_list[i + 1] - w_list[i]:
         w_max = w_list[i + 1] - w_list[i]
 
-
 for i in range(len(y_list) - 1):
     if y_max < y_list[i + 1] - y_list[i]:
         y_max = y_list[i + 1] - y_list[i]

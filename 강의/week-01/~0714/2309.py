@@ -1,6 +1,6 @@
 import sys
 
-sys.stdin = open('../input.txt', 'r')
+sys.stdin = open('../../../input.txt', 'r')
 
 num_list = [int(sys.stdin.readline().rstrip()) for _ in range(9)]
 

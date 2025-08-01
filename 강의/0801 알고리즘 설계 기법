@@ -1,0 +1,27 @@
+문제 해결 기법
+- Divied-and-Conquer (분할 정복)
+""
+recirsion 트리
+가장 큰수 찾기
+이진 탐색 = 찾는 부분이 어디 있는지를 보는게 아닌 아 여기엔 확실히 없구나 경우의 수를 짤라는 것으로 인지.
+multiplication
+
+""
+- Backtracking
+""
+
+""
+- Dynamic Programming (동적계획법)
+""
+1. Formulate the problem recursively
+    문제를 해결하는 recursive algorithm 혹은 점화식(recurrence)을 찾아내야함
+    계산할 값이 무엇인지 결정하고, 그것에 대한 점화식을 구함
+2. LCS
+
+우리가 원하는 답은 l(m,n)
+나머지 i, j 에 대한 L(i, j) 값들을 푸는 것이 부분 문제 (0 <= i <= m - 1, 0 <= j <= n - 1) --> 재귀적 구조를 찾아서 점화식으로
+""
+- Greedy Algorithms
+""
+
+""

@@ -1,6 +1,6 @@
 import sys
 
-sys.stdin = open('../input.txt', 'r')
+sys.stdin = open('../../../input.txt', 'r')
 arr = sys.stdin.readline().rstrip()
 find_ch = ["a", "e", "i", "o", "u"]
 

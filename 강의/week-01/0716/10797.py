@@ -1,6 +1,6 @@
 import sys
 
-sys.stdin = open('../input.txt', 'r')
+sys.stdin = open('../../../input.txt', 'r')
 
 day_list = [False] * 10
 day_list[int(input())] = True

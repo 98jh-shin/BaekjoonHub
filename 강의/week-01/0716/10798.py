@@ -1,5 +1,5 @@
 import sys
-sys.stdin = open('../input.txt', 'r')
+sys.stdin = open('../../../input.txt', 'r')
 
 result = [list(sys.stdin.readline().rstrip()) for _ in range(5)]
 

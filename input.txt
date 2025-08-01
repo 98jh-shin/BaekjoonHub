@@ -1,9 +1,9 @@
-8
-cgiosy jhnah
-son kim
-son lee
-cgiosy leejseo
-cgiosy junseo
-son hwang
-cgiosy sean
-cgiosy cologne
+2
+3 2
+1 3
+2 3
+4 4
+1 2
+2 3
+3 4
+4 2

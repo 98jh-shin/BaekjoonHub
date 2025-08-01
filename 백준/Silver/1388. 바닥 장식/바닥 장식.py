@@ -5,6 +5,7 @@ n, m = map(int, sys.stdin.readline().split())
 graph = [list(sys.stdin.readline().strip()) for _ in range(n)]
 
 visited = [[False] * m for _ in range(n)]
+print(graph)
 
 def dfs(row, col, ch):
     visited[row][col] = True
@@ -20,6 +21,7 @@ def dfs(row, col, ch):
         dfs(row + 1, col, ch)
 
 count = 0
+
 for i in range(n):
     for j in range(m):
         if not visited[i][j]:

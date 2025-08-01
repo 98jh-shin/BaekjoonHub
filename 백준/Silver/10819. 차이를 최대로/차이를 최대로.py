@@ -1,13 +1,34 @@
 import sys
-from itertools import permutations
 
 n = int(input())
-nums = list(map(int, sys.stdin.readline().split()))
+max_num = 0
+path = []
+visited = [False] * n
 
-result = 0
+num_list = list(map(int, sys.stdin.readline().split()))
 
-for perm in permutations(nums):
-    temp = sum(abs(perm[i] - perm[i + 1]) for i in range(n - 1))
-    result = max(result, temp)
 
-print(result)
+def dfs(depth):
+    global max_num
+
+    if depth == n:
+        temp = 0
+
+        for i in range(n - 1):
+            temp += abs((path[i] - path[i + 1]))
+            if max_num < temp:
+                max_num = temp
+        return
+
+    for i in range(n):
+        if not visited[i]:
+            visited[i] = True
+            path.append(num_list[i])
+            dfs(depth + 1)
+
+            path.pop()
+            visited[i] = False
+
+
+dfs(0)
+print(max_num)

@@ -1,6 +1,6 @@
 import sys
 
-sys.stdin = open('../input.txt', 'r')
+sys.stdin = open('../../../input.txt', 'r')
 
 n = int(input())
 
@@ -30,8 +30,6 @@ def quick_sort(arr, left, right, idx, rev):
             arr[i], arr[j] = arr[j], arr[i]
             i += 1
             j -= 1
-
-
 
     quick_sort(arr, left, j, idx, rev)
     quick_sort(arr, i, right, idx, rev)
