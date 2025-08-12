@@ -11,7 +11,6 @@ int main() {
     int n;
     cin >> n;
 
-    bool success = true;
     string str;
     stack<int> s;
     int index = 1;
@@ -31,15 +30,11 @@ int main() {
             s.pop();
             ++i;
         } else {
-            success = false;
-            break;
+            cout << "NO\n";
+            return 0;
         }
     }
 
-    if (success) {
-        cout << str;
-    } else {
-        cout << "NO\n";
-    }
+    cout << str;
     return 0;
 }
