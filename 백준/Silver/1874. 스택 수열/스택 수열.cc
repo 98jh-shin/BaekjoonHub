@@ -6,18 +6,19 @@ using namespace std;
 
 int main() {
     ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
+    cin.tie(nullptr);
 
-    stack<int> s; // 인덱스를 보관할 스택
-    int n; // 입력을 받을 n
-    cin >> n; // 수열을 이루는 정수
-    int index = 1; // 스택에 넣어줄 인덱스
-    string str = "";
+    int n;
+    cin >> n;
 
     bool success = true;
+    string str;
+    stack<int> s;
+    int index = 1;
+    int i = 0;
+    int x;
 
-    for (int i = 0; i < n; i++) {
-        int x;
+    while (i < n) {
         cin >> x;
 
         while (x >= index) {
@@ -28,12 +29,13 @@ int main() {
         if (s.top() == x) {
             str += "-\n";
             s.pop();
+            ++i;
         } else {
             success = false;
             break;
         }
     }
-    
+
     if (success) {
         cout << str;
     } else {
