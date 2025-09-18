@@ -111,7 +111,7 @@
     <option name="/Default/CodeInspection/Highlighting/InspectionSeverities/=CppInvalidLineContinuation/@EntryIndexedValue" value="WARNING" type="string" />
     <option name="/Default/CodeInspection/Highlighting/InspectionSeverities/=CppJoinDeclarationAndAssignment/@EntryIndexedValue" value="SUGGESTION" type="string" />
     <option name="/Default/CodeInspection/Highlighting/InspectionSeverities/=CppLambdaCaptureNeverUsed/@EntryIndexedValue" value="WARNING" type="string" />
-    <option name="/Default/CodeInspection/Highlighting/InspectionSeverities/=CppLocalVariableMayBeConst/@EntryIndexedValue" value="DO_NOT_SHOW" type="string" />
+    <option name="/Default/CodeInspection/Highlighting/InspectionSeverities/=CppLocalVariableMayBeConst/@EntryIndexedValue" value="HINT" type="string" />
     <option name="/Default/CodeInspection/Highlighting/InspectionSeverities/=CppLocalVariableMightNotBeInitialized/@EntryIndexedValue" value="WARNING" type="string" />
     <option name="/Default/CodeInspection/Highlighting/InspectionSeverities/=CppLocalVariableWithNonTrivialDtorIsNeverUsed/@EntryIndexedValue" value="DO_NOT_SHOW" type="string" />
     <option name="/Default/CodeInspection/Highlighting/InspectionSeverities/=CppLongFloat/@EntryIndexedValue" value="WARNING" type="string" />
@@ -249,5 +249,6 @@
     <option name="/Default/CodeInspection/Highlighting/InspectionSeverities/=StdIsConstantEvaluatedWillAlwaysEvaluateToConstant/@EntryIndexedValue" value="WARNING" type="string" />
     <option name="/Default/CodeInspection/Highlighting/InspectionSeverities/=StringLiteralTypo/@EntryIndexedValue" value="DO_NOT_SHOW" type="string" />
     <option name="/Default/CodeStyle/CodeFormatting/CppClangFormat/ExecutableToUse/@EntryValue" value="Custom" type="string" />
+    <option name="/Default/CodeStyle/CodeFormatting/CppClangFormat/ExternalClangFormatPath/@EntryValue" value="$USER_HOME$/CLionProjects/Week09_pintOS_Thread_Team05/98jh-shin/.clang-format" type="string" />
   </component>
 </project>
