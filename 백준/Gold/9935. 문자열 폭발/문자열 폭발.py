@@ -1,22 +1,21 @@
 import sys
 
-txt = sys.stdin.readline().rstrip()
+arr = sys.stdin.readline().rstrip()
 bomb = sys.stdin.readline().rstrip()
 
 stack = []
 
-for ch in txt:
+for ch in arr:
     stack.append(ch)
 
     if len(stack) < len(bomb):
         continue
-    else:
-        if ch == bomb[-1]:
-            temp = ''.join(stack[len(stack) - len(bomb):])
-            if temp == bomb:
-                for _ in range(len(bomb)):
-                    stack.pop()
-                    
+
+    if ch == bomb[-1]:
+        if stack[-len(bomb):] == list(bomb):
+            for _ in range(len(bomb)):
+                stack.pop()
+
 if stack:
     print(''.join(stack))
 else:
