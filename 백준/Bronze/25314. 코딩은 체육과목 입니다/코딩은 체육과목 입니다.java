@@ -11,9 +11,7 @@ public class Main {
 
         int repeatCount = n / 4;
 
-        for (int i = 0; i < repeatCount; i++) {
-            sb.append("long ");
-        }
+        sb.append("long ".repeat(repeatCount));
 
         sb.append("int");
 
